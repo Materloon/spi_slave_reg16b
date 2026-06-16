@@ -3,7 +3,9 @@ project:
   title:        "SPI Slave REG 16b"      # Project title
   author:       "Massimo"      # Your name
   discord:      "HI-LO"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-
+  description:  A 16-bit SPI slave controller (CPOL=0, CPHA=0) that receives configuration words from an external SPI master and exposes the received data on its output bus. REG_DTX is hard-wired to 10000 (0x2710) so the slave always shifts that constant back to the master on MISO.
+  language: "Verilog"
+  clock_hz: 25000000
   # How many tiles your design occupies? A single tile is about 340x160 uM.
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 3x4 or 4x4
 
@@ -13,19 +15,10 @@ project:
   # List your project's source files here.
   # Source files must be in ./src and you must list each source file separately, one per line.
   # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
-
-  category: digital
   source_files:
     - "tt_um_top.v"
     
-description: |
-  A 16-bit SPI slave controller (CPOL=0, CPHA=0) that receives configuration
-  words from an external SPI master and exposes the received data on its output
-  bus. REG_DTX is hard-wired to 10000 (0x2710) so the slave always shifts that
-  constant back to the master on MISO.
-
   
-
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
